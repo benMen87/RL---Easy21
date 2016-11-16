@@ -1,11 +1,15 @@
 import card
+import numpy as np
 
 MAX_VAL = 21
 MIN_VAL = 0 
 DEALER_HIT_MAX = 17
+EASY_21 = 21
 
 HIT = 'hit'
 MISS = 'miss'
+actions = [HIT, MISS]
+
 def step(dealer_firstcard, player_sum, action):
     dealer_sum = dealer_firstcard
     reward = 0
@@ -30,6 +34,8 @@ def step(dealer_firstcard, player_sum, action):
 def inrange(sum):
     return p_sum in  range(MIN_VAL, MAX_VAL + 1)
         
+def get_rand_action():
+     return np.random.choice(len(actions), p=[1/2]*2)
 
 def hit(curr_sum):
     val, color = card.draw_card()
