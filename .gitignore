@@ -91,6 +91,9 @@ ipch/
 # VS solution 
 *.sln
 
+# VS python project 
+*.pyproj
+
 # TFS 2012 Local Workspace
 $tf/
 
